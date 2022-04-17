@@ -1,0 +1,20 @@
+{% extends "stock/getStock.html" %}
+
+{% block chart %}
+<div>Hello World from the routes...</div>
+<div>Historical price data for:</div>
+<div>{{ stockData }}</div>
+<div>
+    <img src='data:image/png;base64,{{ data }}'/>'
+</div>
+
+{% for item in otherData %}
+    <div>{{ item }}</div>
+    <div>================</div>
+{% endfor %}
+
+{% endblock %}
+
+
+
+<!-- return f"<img src='data:image/png;base64,{data}'/>" -->

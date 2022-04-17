@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+<!-- {% set active_page="view1" %} -->
+
+{% block content %}
+<div>Hello World from the routes...</div>
+<form method="post">
+    <label for="username">Enter a ticker symbol</label>
+    <input type="text" name="ticker" id="ticker" placeholder="...such as ^GSPC">
+    <input type="submit" value="submit ticker">
+</form>
+<div>
+    {% block chart %}
+    {% endblock %}
+</div>
+{% endblock %}
