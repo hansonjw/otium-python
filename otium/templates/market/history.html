@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% set active_page="history" %}
+
+{% block content %}
+<div class="page-text">
+    <p>Below is historical context annual returns for the S&P 500</p>
+</div>
+{% for x in data %}
+    <div class="chart">
+        <img src='data:image/png;base64,{{ x }}'/>
+    </div>
+{% endfor %}
+
+{% endblock %}

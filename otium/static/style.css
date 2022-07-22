@@ -1,0 +1,81 @@
+body {
+    font-family: Optima, sans-serif;
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+    /* background-color:#BA4A00; */
+    background-color: #DC7633;
+}
+
+.base-div {
+    /* background-color: #CCD1D1; */
+    /* background-color: #BA4A00; */
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.navbar {
+    overflow: hidden;
+    /* background-color: #DC7633; */
+    background-color:#BA4A00;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+  }
+
+.nav-link{
+    margin:auto;
+    text-align: center;
+    color:  #ECF0F1;
+    font-size: 1rem;
+}
+
+.navbar-brand{
+    color: #ECF0F1;
+    font-size: 1.5rem;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+    border-style: solid;
+    border-color: #ECF0F1;
+    background-color: #1F618D;
+    color:#ECF0F1;
+    border-radius: 0.5rem;
+}
+
+.nav-pills .nav-link {
+    border: 0.2rem;
+}
+
+/* .nav-item{
+    border-style: solid;
+    border-color: green;
+} */
+
+.chart{
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.chart img{
+    border-radius: 0.5rem;
+    max-width: 100%;
+    height: auto;
+}
+
+.page-text{
+    /* background-color:#BA4A00; */
+    display: flex;
+    justify-content: center;
+    border-radius: 0.5rem;
+    align-items: center;
+    margin: 1rem;
+}
+
+.page-text p {
+    color: #ECF0F1;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1rem;
+}

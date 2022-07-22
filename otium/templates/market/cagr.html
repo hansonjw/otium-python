@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% set active_page="cagr" %}
+
+{% block content %}
+<div class="page-text">
+    <p>S&P 500, Compound Annual Growth Rates (CAGR)</p>
+</div>
+{% for x in data %}
+    <div class="chart">
+        <img src='data:image/png;base64,{{ x }}'/>
+    </div>
+{% endfor %}
+
+{% endblock %}

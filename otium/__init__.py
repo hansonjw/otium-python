@@ -28,12 +28,9 @@ def create_app(test_config=None):
         pass
     
     # import modules for blueprints
-    from .routes import stock
-    app.register_blueprint(stock.bp)
 
-    from .routes import hello_world
-    app.register_blueprint(hello_world.bp)
-    app.add_url_rule('/', endpoint='index')
+    from .routes import market
+    app.register_blueprint(market.bp)
 
     from . import db
     db.init_app(app)

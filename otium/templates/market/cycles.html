@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% set active_page="cycles" %}
+
+{% block content %}
+<div class="page-text">
+    <p>Major market cycles are plotted below.</p>
+</div>
+{% for x in data %}
+    <div class="chart">
+        <img src='data:image/png;base64,{{ x }}'/>
+    </div>
+{% endfor %}
+<div class="page-text">
+    <p>In this context, a cycle is defined as a decline of 10% or more from an all-time high, followed by a return to that same all-time high.</p>
+</div>
+
+{% endblock %}
