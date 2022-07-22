@@ -62,6 +62,9 @@ def findCycles(df, decline):
         declineList.append(decline)
         nameList.append(peakList[i].strftime("%b_%Y"))
 
+    # I don't think this will work in production...see nfl structure
+    # Consider a POST method...need to better understand that anyways
+    # 
     # create DataFrame
     cycleData = pd.DataFrame({'peak':peakList, 'bottom':bottomList,'recovery':recoveryList, 'crash': crashList, 'duration': durationList, 'decline': declineList, 'title':nameList})
 
