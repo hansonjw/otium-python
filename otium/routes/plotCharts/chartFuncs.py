@@ -67,11 +67,14 @@ def todayPlot(d):
     strToday = f"{dateF}:\n {round(today_val*100-100, 1)}%"
     strStart = f"{dateS}:\n {round(start_val*100)}%"
     strMin = f"{dateM}:\n {round(min_val*100-100, 1)}%"
-    chart.text(x1[-1], y1[-1], strToday)
-    chart.text(x1[0], y1[0], strStart)
-    chart.text(min_date, min_val, strMin)
-    chart.plot([today_date, start_date, min_date],[today_val, start_val, min_val], marker="o", linestyle="None")
+    chart.text(x1[-1], y1[-1], strToday, color='#DC7633')
+    chart.text(x1[0], y1[0], strStart, color='#DC7633')
+    chart.text(min_date, min_val, strMin, color='#DC7633')
+    chart.plot([today_date, start_date, min_date],[today_val, start_val, min_val], marker="o", linestyle="None", color='#DC7633')
 
+    # turn off top and right side frame borders
+    chart.spines["right"].set_visible(False)
+    chart.spines["top"].set_visible(False)
     
     buf = BytesIO()
     fig.savefig(buf, format="png")
@@ -88,7 +91,7 @@ def histPlot(d, growth=False, log=False):
 
     # formatting for the chart
     chart.set_xlabel('Year-Week')
-    chart.grid(True, linestyle='-')
+    chart.grid(True, linestyle='-', zorder=0, linewidth=0.1, color='#3498DB')
     chart.tick_params(labelcolor='black')
     chart.set_title("S&P 500 Historical Prices")
 
@@ -138,7 +141,7 @@ def deltaGrowthPlot(d):
 
     # formatting for the chart
     chart.set_xlabel('Year-Week')
-    chart.grid(True, linestyle='-')
+    chart.grid(True, linestyle='-', zorder=0, linewidth=0.1, color='#3498DB')
     chart.tick_params(labelcolor='black')
     chart.set_title("")
 
@@ -262,8 +265,8 @@ def barAnnual(df):
     # chart = fig.figure.Figure.subplots()
     x1 = df.year
     y1 = df.annReturn
-    chart.grid(True, linestyle='-')
-    chart.bar(x1, y1, color="#2874A6")
+    chart.grid(True, linestyle='-', zorder=0, linewidth=0.1, color='#3498DB')
+    chart.bar(x1, y1, color="#2874A6", zorder=3)
 
     # formatting for the chart
     chart.set_xlabel('Year')
@@ -271,7 +274,7 @@ def barAnnual(df):
     chart.set_title("S&P 500 Annual Returns")
     
     # annotate chart, add % and 'ytd' to last data point
-    lastBar = chart.bar(x1, y1)[-1]
+    lastBar = chart.bar(x1, y1, zorder=4)[-1]
     lastBar.set_color("#64DD17")
     barWidth = lastBar.get_width()
     strB = f"YTD {lastBar.get_height()}%"
@@ -305,7 +308,7 @@ def growthRates(df):
 
     # formatting for the chart
     chart.set_xlabel('Date')
-    chart.grid(True, linestyle='-')
+    chart.grid(True, linestyle='-', zorder=0, linewidth=0.1, color='#3498DB')
     chart.tick_params(labelcolor='black')
     chart.legend(loc='lower right', labels=l, fontsize='medium')
     chart.set_title("Current CAGR, trailing periods")

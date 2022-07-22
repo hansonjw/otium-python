@@ -1,1 +1,15 @@
 __pycache__/
+
+
+# virtual environment stuff
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# flask stuff
+instance/
+.webassets-cache
